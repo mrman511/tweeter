@@ -1,0 +1,55 @@
+
+
+main form div {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+main h3{
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  margin-bottom: 0;
+  padding-bottom: .5em;
+  align-self: flex-start;
+}
+
+
+.tweet-text {
+  min-height: 50px;
+  min-width: 500px;
+  width: 70%;
+  max-width: 1000px;
+  font-size: .75em;
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-bottom: 1em;
+}
+
+button {
+  width: 5em;
+  height: 2em;
+  color: #fff;
+  background-color: #4056A1;
+  border-radius: 5px;
+  border: none;
+  
+}
+
+.form-data {
+  font-family: "Bungee";
+  font-size: 1.2em;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: .5em auto;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+.tweet-text-area{
+  border-bottom: 3px solid saddlebrown;
+}

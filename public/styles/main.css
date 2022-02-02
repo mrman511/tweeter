@@ -1,0 +1,9 @@
+main {
+  width: 90%;
+  min-height: 200px;
+  margin: 0 auto;
+  background-color: #f4f1ec;
+  display: flex;
+  flex-direction: column;
+}
+
