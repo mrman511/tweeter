@@ -7,26 +7,26 @@ article {
   align-items: center;
 }
 
-article div {
-  display: flex;
-}
 
 .tweet-body {
   min-height: 150px;
   width: 95%;
   flex-direction: column;
 }
-.tweeter-pic{
+
+.tweeter-id {
+  width: 100%;
+  display: flex;
+  
+}
+
+.tweeter-id img {
+  width: 2em;
   margin: 1em;
-  justify-self: flex-start;
 }
 
-.tweet-body div {
-  justify-content: space-between;
-}
-
-.tweet-body .handle {
-  align-self: flex-end;
+.tweeter-id .handle {
+  justify-self: flex-end;
   opacity: .5;
 }
 
@@ -38,12 +38,13 @@ article div {
 
 .tweet-foot {
   width: 95%;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .tweet-foot div {
-  justify-self: flex-end;
+  
   width: 18%;
   display: flex;
   justify-content: space-evenly;
