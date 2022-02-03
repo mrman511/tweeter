@@ -6,42 +6,54 @@
 
 
 $(() => {
-  // const newTweet = {
-  //   "user": {
-  //     "name": "Newton",
-  //     "avatars": "https://i.imgur.com/73hZDYK.png",
-  //     "handle": "@SirIsaac"
-  //   },
-  //   "content": {
-  //     "text": "If I have seen further it is by standing on the shoulders of giants"
-  //   },
-  //   "created_at": 1461116232227
-  // }
 
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
+  // const data = [
+  //   {
+  //     "user": {
+  //       "name": "Newton",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png"
+  //       ,
+  //       "handle": "@SirIsaac"
+  //     },
+  //     "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //     "created_at": 1461116232227
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Descartes",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@rd" },
+  //     "content": {
+  //       "text": "Je pense , donc je suis"
+  //     },
+  //     "created_at": 1461113959088
+  //   }
+  // ];
+
+
+  $('#new-tweet').on('submit', function(event) {
+  
+     
+    event.preventDefault();
+    const data = $(this).serialize()
+    const input = data.split('=')[1]
+    
+    if (input === null || input === '' || input.length > 140){
+      alert('Invalid Tweet. Please ensure you have made an entry and the entry is no more that 140 char long')
+    } else {
+      $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: data,
+      success: () => {
+        console.log('POST success');
+        loadTweets()
+      }
+      })
+    };
+  });
 
 
   //the container to appent the tweets to
@@ -71,6 +83,7 @@ $(() => {
 // console.log(newTweet)
 // return tweetElement;
 
+   
 
 
     const $tweets = $(`<article>`).addClass('tweets');
@@ -101,7 +114,6 @@ $(() => {
      </div>
     `
 
-
     $tweetFoot.append($('<p>').text(timeago.format(newTweet.created_at)));
     $tweetFoot.append($icons);
     $tweets.append($tweetBody, $tweetFoot);
@@ -118,5 +130,22 @@ $(() => {
 
   };
   
-  renderTweets(data);
+  //renderTweets(data);
+
+  const loadTweets = () => {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+    }).then((tweets) => {
+      $tweetContainer.empty();
+      renderTweets(tweets)
+    })
+    
+  }
+  
+  loadTweets();
+
+  
+
+  
 });
