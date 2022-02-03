@@ -17,15 +17,20 @@ main h3{
 
 
 .tweet-text {
-  min-height: 50px;
+  min-height: 1em;
   min-width: 500px;
   width: 70%;
   max-width: 1000px;
-  font-size: .75em;
+  font-size: 1em;
   background: transparent;
   border: none;
   outline: none;
   margin-bottom: 1em;
+}
+
+.tweet-text::placeholder{
+  font-weight: bold;
+  color: red;
 }
 
 button {

@@ -33,27 +33,7 @@ $(() => {
   // ];
 
 
-  $('#new-tweet').on('submit', function(event) {
   
-     
-    event.preventDefault();
-    const data = $(this).serialize()
-    const input = data.split('=')[1]
-    
-    if (input === null || input === '' || input.length > 140){
-      alert('Invalid Tweet. Please ensure you have made an entry and the entry is no more that 140 char long')
-    } else {
-      $.ajax({
-      url: '/tweets',
-      method: 'POST',
-      data: data,
-      success: () => {
-        console.log('POST success');
-        loadTweets()
-      }
-      })
-    };
-  });
 
 
   //the container to appent the tweets to
@@ -123,9 +103,9 @@ $(() => {
   };
 
   const renderTweets = (arrayOfObj) => {
-
-    for (obj of arrayOfObj) {
-      $tweetContainer.append(createTweetElement(obj));
+    $tweetContainer.empty();
+    for (let i = arrayOfObj.length; i > 0; i--){
+      $tweetContainer.append(createTweetElement(arrayOfObj[i - 1]));
     }
 
   };
@@ -146,6 +126,32 @@ $(() => {
   loadTweets();
 
   
-
+  $('#new-tweet').on('submit', function(event) {
+    event.preventDefault();
+    const data = $(this).serialize()
+    const input = data.split('=')[1]
+    
+    if (input === null || input === '' || input.length > 140){
+      if (input === null || input === ''){
+        $('#tweet-text').attr('placeholder', 'Your TweeT is not long enough!');
+      } else {
+        
+        $('#tweet-text').val('');
+        $('#tweet-text').attr('placeholder', 'Your TweeT is too not long!');
+      }
+    } else {
+      $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: data,
+      success: () => {
+        console.log('POST success')
+        $('#tweet-text').attr('placeholder', '')
+        $('#tweet-text').val('');
+        loadTweets()
+      }
+      })
+    };
+  });
   
 });
