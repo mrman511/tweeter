@@ -1,4 +1,6 @@
-
+main form {
+  background-color: #f4f1ec;
+}
 
 main form div {
   margin: 0;
@@ -40,7 +42,8 @@ button {
   background-color: #4056A1;
   border-radius: 5px;
   border: none;
-  
+  padding: 6px;
+  box-shadow: 4px 4px 3px  #5264a0;
 }
 
 .form-data {
@@ -57,4 +60,9 @@ button {
 
 .tweet-text-area{
   border-bottom: 3px solid saddlebrown;
+}
+
+botton:hover {
+  background-color: #68749c;
+  cursor: pointer;
 }
