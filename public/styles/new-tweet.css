@@ -43,7 +43,7 @@ button {
   border-radius: 5px;
   border: none;
   padding: 6px;
-  box-shadow: 4px 4px 3px  #5264a0;
+  box-shadow: 4px 4px 3px  rgba(29, 29, 29, 0.76);
 }
 
 .form-data {
@@ -62,7 +62,13 @@ button {
   border-bottom: 3px solid saddlebrown;
 }
 
-botton:hover {
-  background-color: #68749c;
+button:hover {
+  background-color: #5264a0;
   cursor: pointer;
+}
+
+button:active {
+  transform: translateX(4px);
+  transform: translateY(4px);
+  box-shadow: 0 0 0;
 }
