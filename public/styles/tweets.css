@@ -25,16 +25,20 @@ article {
 .tweeter-id {
   width: 100%;
   display: flex;
- 
+  justify-content: space-between;
 }
 
 .tweeter-id img {
   width: 2em;
   margin: 1em;
 }
+.tweeter-id .id-left {
+  display: flex;
+
+}
 
 .tweeter-id .handle {
-  justify-self: flex-end;
+  padding-right: 5%;
   opacity: .5;
 }
 

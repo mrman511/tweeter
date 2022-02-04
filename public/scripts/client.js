@@ -12,7 +12,7 @@ $(() => {
   
   const createTweetElement = (newTweet) => {
     
-//     const tweetElement = `<article class = "tweets">
+//     const tweetElement = $(`<article class = "tweets">
 //   <div class="tweet-body tweet-text-area">
 //     <div class = 'tweeter-id'>
 //       <img src ="${newTweet.user.avatars}>
@@ -30,7 +30,7 @@ $(() => {
 //       <i class="icon fa-solid fa-heart"></i>
 //     </div>
 //   <div>
-// </article>`
+// </article>`)
 // console.log(newTweet)
 // return tweetElement;
 
@@ -45,7 +45,12 @@ $(() => {
     const $img = $('<img>').attr('src', newTweet.user.avatars);
     const $name = $('<h4>').text(newTweet.user.name);
     const $handle = $('<h4>').addClass('handle').text(newTweet.user.handle);
-    $tweeterID.append($img, $name, $handle);
+
+    //set $img and $name in a seperate div with a class of id-left 
+    const $idLeft = $('<div>').addClass('id-left');
+    $idLeft.append($img, $name);
+
+    $tweeterID.append($idLeft, $handle);
   
     //final setup of tweets body
     $tweetBody.append($tweeterID, $('<p>').text(newTweet.content.text));

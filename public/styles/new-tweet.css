@@ -19,15 +19,13 @@ main h3{
 
 
 .tweet-text {
-  min-height: 1em;
-  min-width: 500px;
   width: 70%;
-  max-width: 1000px;
   font-size: 1em;
   background: transparent;
   border: none;
   outline: none;
-  margin-bottom: 1em;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .tweet-text::placeholder{

@@ -28,6 +28,13 @@
     position: sticky;
     top: 120px;
     z-index: 1;
-    
+  }
+
+  nav h1 {
+    margin-left: 10%;
+  }
+
+  nav div {
+    margin-right: 10%;
   }
 }

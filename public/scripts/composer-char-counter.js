@@ -2,8 +2,8 @@ $(document).ready(() => {
   let $formField = $('#tweet-text');
   const $totalChars = ($('#char-counter').text());
 
-  $formField.keydown(() => {
-    const $currentCount = ($('#tweet-text').val().length) + 1;
+  $formField.keyup(() => {
+    const $currentCount = ($('#tweet-text').val().length);
     const $charsLeft = (parseInt($totalChars) - ($currentCount)).toString();
     $('#char-counter').val($charsLeft);
 
