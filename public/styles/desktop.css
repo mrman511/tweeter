@@ -12,10 +12,12 @@
 
   header {
     position: sticky;
-    top: 120px;
+    top: 118px;
     grid-column: 1 / span 1;
     width: 70%;
     margin: 2em 15%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
   }
 
   main {

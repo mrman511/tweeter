@@ -6,37 +6,10 @@
 
 
 $(() => {
-
   //the container to appent the tweets to
   const $tweetContainer = $('#tweet-container');
   
   const createTweetElement = (newTweet) => {
-    
-//     const tweetElement = $(`<article class = "tweets">
-//   <div class="tweet-body tweet-text-area">
-//     <div class = 'tweeter-id'>
-//       <img src ="${newTweet.user.avatars}>
-//       <h4 class = 'name'>${newTweet.user.name}</h4>
-//       <h4 class="handle">${newTweet.user.handle}</h4>
-//     </div>
-//     <p>${newTweet.content.text}</p>
-//   </div>
-
-//   <div class="tweet-foot">
-//     <p>${timeago.format(newTweet.created_at)}</p>
-//     <div>
-//       <i class="icon fa-solid fa-flag"></i>
-//       <i class="icon fa-solid fa-retweet"></i>
-//       <i class="icon fa-solid fa-heart"></i>
-//     </div>
-//   <div>
-// </article>`)
-// console.log(newTweet)
-// return tweetElement;
-
-   
-
-
     const $tweets = $(`<article>`).addClass('tweets');
     //set up tweet body to display info about the tweet
     const $tweetBody = $('<div>').addClass('tweet-body', 'tweet-text-area');
@@ -96,7 +69,7 @@ $(() => {
   
   loadTweets();
 
-  
+  //function for new tweet event
   $('#new-tweet').on('submit', function(event) {
     event.preventDefault();
     const data = $(this).serialize()

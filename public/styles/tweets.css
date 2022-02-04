@@ -45,6 +45,8 @@ article {
 .tweet-body p {
   display: inline-block;
   width: auto;
+  max-width: 85%;
+  height: auto;
   padding-bottom: .5em;
 }
 

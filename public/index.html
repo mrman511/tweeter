@@ -29,7 +29,6 @@
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
     <nav>
       <h1>tweeter</h1>
       <div>
@@ -43,29 +42,27 @@
           <img src="./images/profile-hex.png"> 
           <h2>Paul Bodner</h2>
       </div>
-  </header>
-  <main class = "container">
-    <form id = "new-tweet" action="/tweets" method ="post">
+    </header>
 
-      <div class="tweet-text-area">
-        <h3>What are you humming about? </h3>
-        <textarea name="text" id="tweet-text" class="tweet-text"></textarea>
-      </div>
-      
-      <div>
-        <div class = "form-data">
-          <button  type="submit">Tweet</button>
-          <output id ="char-counter"  name="counter" class="counter" for="tweet-text">140</output>
+    <main class = "container">
+      <form id = "new-tweet" action="/tweets" method ="post">
+        <div class="tweet-text-area">
+          <h3>What are you humming about? </h3>
+          <textarea name="text" id="tweet-text" class="tweet-text"></textarea>
         </div>
-      </div>
-    </form>
-
-    <section id ="tweet-container">
       
-    </section>
+        <div>
+          <div class = "form-data">
+            <button  type="submit">Tweet</button>
+            <output id ="char-counter"  name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </div>
+      </form>
 
-  </main>
+      <section id ="tweet-container">
+      <!--container to post new tweets-->
+      </section>
 
-    <!-- Page-specific (main) content here -->
+    </main>
   </body>
 </html>
